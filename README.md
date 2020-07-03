@@ -8,13 +8,11 @@ The HAR files contain the network traffic data we captured for a duration of two
 1. old_live.har - Contains network traffic for the live version of old Twitter UI. (Incognito mode with user-agent set as "Googlebot")
 2. new_live_1.har - Contains network traffic for the live version of new Twitter UI. (Basic browser mode with default user-agent)
 3. new_live_2.har - Contains network traffic for the live version of new Twitter UI. (Basic browser mode with user-agent set as "Googlebot") 
-4. archived_1.har - Contains network traffic for the archived version of Twitter. (Archived through "Save Page Now" of Internet Archive by us)
-5. archived_2.har - Contains network traffic for the archived version of Twitter. (Archived through "Save Page Now" of Internet Archive by other)
+4. archived_1.har - Contains network traffic for the archived version of Twitter. (Archived through "SPN" of Internet Archive by us)
+5. archived_2.har - Contains network traffic for the archived version of Twitter. (Archived through "SPN" of Internet Archive by other)
 6. archived_3.har - Contains network traffic for the archived version of Twitter. (Archived using "curl" with user-agent set as "Googlebot")
 
-The above mentioned HAR files can be downloaded from the release assets of this repository.
-
-Below are the respective target mementos for the archived versions.
+The above mentioned HAR files can be downloaded from the release assets of this repository. Below are the respective target mementos for the archived versions.
 
 1. archived_1.har - http://web.archive.org/web/20200628012605/https://twitter.com/realDonaldTrump
 2. archived_2.har - http://web.archive.org/web/20200628002632/https://twitter.com/realDonaldTrump
