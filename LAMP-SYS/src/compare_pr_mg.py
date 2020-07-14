@@ -34,6 +34,3 @@ df3['match'] = df1['predicted'].eq(df2['metadata']).replace([True, False], [1,0]
 result = pd.concat([df1, df2, df3], axis = 1, sort = False)
 result.to_csv(output_file)
 
-#df4 = pd.read_csv("title_output.csv")
-#count = df4['title_match'].value_counts()
-#print(count)
