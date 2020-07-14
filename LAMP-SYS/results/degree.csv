@@ -1,0 +1,51 @@
+,predicted,metadata,match
+0,master of science,master of science,1
+1,doctor of philosophy,doctor of phiosophy,0
+2,bachelor of science,master of science,0
+3,doctor of philosophy,doctor of phiosophy,0
+4,doctor of philosophy,doctor of phiosophy,0
+5,master of science,master of science,1
+6,doctor of science,doctor of science,1
+7,master of science,master of science,1
+8,master of science,master of science,1
+9,bachelor of science,bachelor of science,1
+10,master in architecture,master in architecture,1
+11,doctor of philosophy,doctor of phiosophy,0
+12,doctor of science,doctor of science,1
+13,bachelor of architecture,bachelor of architecture,1
+14,master in architecture,master of architecture,0
+15,master in architecture,master of architecture,0
+16,doctor of science,doctor of science,1
+17,doctor of science,doctor of science,1
+18,doctor of science,doctor of science,1
+19,master in city planning,master in city planning,1
+20,master in city planning,master in city planning,1
+21,master in city planning,master in city planning,1
+22,master in city planning,mater in city planning,0
+23,doctor of science,doctor of science,1
+24,doctor of science,doctor of science,1
+25,doctor of science,doctor of science,1
+26,master in city planning,master in city planning,1
+27,master in architecture,master in architecture,1
+28,master in architecture,master in architecture,1
+29,doctor of philosophy,doctor of phiosophy,0
+30,master in architecture,master in architecture,1
+31,doctor of philosophy,doctor of phiosophy,0
+32,doctor of philosophy,doctor of phiosophy,0
+33,master in city planning,master in city planning,1
+34,doctor of philosophy,doctor of phiosophy,0
+35,bachelor of science,bachelor of science,1
+36,master of science,master of science,1
+37,doctor of philosophy,doctor of phiosophy,0
+38,doctor of philosophy,doctor of phiosophy,0
+39,master of architecture,master of architecture,1
+40,master of architecture,master of architecture,1
+41,master of architecture,master of architecture,1
+42,master of architecture,master of architecture,1
+43,master of architecture,s.b.,0
+44,doctor of science,doctor of science,1
+45,master in architecture,master in architecture,1
+46,master in architecture,master of science,0
+47,master of science,master of science,1
+48,doctor of philosophy,doctor of phiosophy,0
+49,,bachelor of science,0
