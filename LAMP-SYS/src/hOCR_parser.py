@@ -68,31 +68,80 @@ def next_item(dict, key):
 	except:
 		#last key
 		x = "-"
+	#print(x)
 	return x
 
 def prev_item(dict, key):
-    if key == prev_key:
-    	x = "-"
-    else:
-    	x = list(dict)[list(dict.keys()).index(key) - 1]
+	#print(list(dict).index(key))
+	#print(list(dict).index(key)-1)
+	#print(list(dict)[list(dict.keys()).index(key) - 1])
+	if list(dict).index(key)-1 < 0:
+		x = "-"
+	else:
+		x = list(dict)[list(dict.keys()).index(key) - 1]
+	#print(x)
 	return x
 
 def get_rel_centre(bbox_info):
-    for key in bbox_info:
-    	#print(key)
-    	next_key = next_item(bbox_info, key)
-    	prev_key = prev_item(bbox_info, key)
-    	if key == prev_key:
-    		#first key
-    	if next_key == "":
-    		#last key
+	for key in bbox_info:
+		#print(key)
+		next_key = next_item(bbox_info, key)
+		prev_key = prev_item(bbox_info, key)
+		#print(prev_key, key, next_key)
+		first_last = False
+		if prev_key == "-":
+			# First key
+			print("In First Key")		
+			first_last = True
+			abs_centerx = int(bbox_info[key]['abs_centerx'])
+			abs_centery = int(bbox_info[key]['abs_centery']) 	
+			rel_centerx = 2
+			rel_centery = 2
+			norm_centerx = rel_centerx / 1
+			norm_centery = rel_centery / 1
+			#print("ggggggggggggggggggggggggggg")            
+		elif next_key == "-":
+			#last key
+			print("In Last Key")
+			first_last = True
+			abs_centerx = int(bbox_info[key]['abs_centerx'])
+			abs_centery = int(bbox_info[key]['abs_centery']) 
+			rel_centerx = 4
+			rel_centery = 4
+			norm_centerx = rel_centerx / 1
+			norm_centery = rel_centery / 1
+			#print("iiiiiiiiiiiiiiiiiiiiiiiiiii")  
+		print(first_last) 
+		if not first_last:
+			#every other token
+			#print(key)
+			print("In every other token======")
+			print(prev_key, key, next_key)
+			#print(bbox_info[prev_key])
+			#print(bbox_info[key])
+			#print(bbox_info[next_key])
+			abs_centerx_p = float(bbox_info[prev_key]['abs_centerx'])
+			abs_centery_p = float(bbox_info[prev_key]['abs_centery'])
+			abs_centerx = float(bbox_info[key]['abs_centerx'])
+			abs_centery = float(bbox_info[key]['abs_centery']) 
+			abs_centerx_n = float(bbox_info[next_key]['abs_centerx'])
+			abs_centery_n = float(bbox_info[next_key]['abs_centery'])
+			print(prev_key, abs_centerx, abs_centerx_p)
+			print(prev_key, abs_centery, abs_centery_p)
+			rel_centerx = (abs_centerx - abs_centerx_p) 
+			rel_centery = (abs_centery - abs_centery_p)
+			print(key, rel_centerx, rel_centery)
+			norm_centerx = rel_centerx / (abs_centerx_n - abs_centerx_p)
+			norm_centery = rel_centery / (abs_centery_n - abs_centery_p)
+		bbox_info[key]['rel_centerx'] = norm_centerx
+		bbox_info[key]['rel_centery'] = norm_centery
+	return bbox_info
 
 def get_width(bbox_info, page_width):
 	for key in bbox_info:
 		startx = int(bbox_info[key]['startx'])
 		endx = int(bbox_info[key]['endx'])
 		width = endx - startx
-		#page_width = 500 #Need to find out
 		norm_width = width / int(page_width)
 		#print(norm_width)
 		bbox_info[key]['width'] = norm_width
@@ -106,8 +155,8 @@ if __name__ == "__main__":
 	bbox_info = parseHOCR(link_soup)
 	bbox_info = get_width(bbox_info, page_width)
 	bbox_info = get_abs_centre(bbox_info, page_width, page_height)
-	#get_rel_centre(bbox_info)
-	print(bbox_info)
+	bbox_info =  get_rel_centre(bbox_info)
+	print(bbox_info['24,'])
       
         
 # 	for x, y in zip(test1,test2):
