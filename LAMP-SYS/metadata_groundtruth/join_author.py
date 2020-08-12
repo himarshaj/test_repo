@@ -39,4 +39,4 @@ for filename in fileList:
 
 concatDf = pd.concat(dfList, axis =0, sort = True)
 concatDf.columns=colname
-concatDf.to_csv("metadata_author.csv",index = None)
+concatDf.to_csv("author_metadata.csv",index = None)
