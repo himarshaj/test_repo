@@ -1,0 +1,501 @@
+,extracted_academic-program,program,program_visual-inspect,program_match,visual-inspected-match
+0,nuclear engineering,nuclear engineering,nuclear engineering,1,1
+1,mathematics,mathematics,mathematics,1,1
+2,mechanical engineering,mechanical engineering,mechanical engineering,1,1
+3,naval architecture and marine engineering,naval architecture and marine engineering,naval architecture and marine engineering,1,1
+4,mathematics,mathematics,mathematics,1,1
+5,aeronautics and astronautics,aeronautics and astronautics,aeronautics and astronautics,1,1
+6,mechanical engineering,mechanical engineering,mechanical engineering,1,1
+7,mechanical engineering,mechanical engineering,mechanical engineering,1,1
+8,naval architecture and marine engineering,naval architecture and marine engineering,naval architecture and marine engineering,1,1
+9,mechanical engineering,mechanical engineering,mechanical engineering,1,1
+10,,architecture,na,0,0
+11,mathematics,mathematics,mathematics,1,1
+12,mechanical engineering fibers and polymers division,mechanical engineering,mechanical engineering fibers and polymers division,0,1
+13,architecture,architecture,architecture,1,1
+14,architecture,architecture,architecture,1,1
+15,architecture,architecture,architecture,1,1
+16,chemical engineering,chemical engineering,chemical engineering,1,1
+17,mechanical engineering,mechanical engineering,mechanical engineering,1,1
+18,,aeronautical engineering dept.,na,0,0
+19,city and regional planning,architecture,city and regional planning,0,1
+20,,architecture,na,0,0
+21,,architecture,na,0,0
+22,city and regional planning,architecture,city and regional planning,0,1
+23,mechanical engineering,mechanical engineering,mechanical engineering,1,1
+24,mechanical engineering,mechanical engineering,mechanical engineering,1,1
+25,metal-carbon systems,metallurgy,metallurgy,0,0
+26,city and regional planning,architecture,city and regional planning,0,1
+27,architecture,architecture,architecture,1,1
+28,architecture,architecture,architecture,1,1
+29,biology,biology,biology,1,1
+30,,architecture,na,0,0
+31,chemistry,chemistry,chemistry,1,1
+32,physics,physics,physics,1,1
+33,city and regional planning,city and regional planning,city and regional planning,1,1
+34,mechanical engineering,mechanical engineering,mechanical engineering,1,1
+35,mechanical engineering and physics,mechanical engineering,mechanical engineering and physics,0,1
+36,mechanical engineering,mechanical engineering,mechanical engineering,1,1
+37,mechanical engineering,mechanical engineering,mechanical engineering,1,1
+38,mathematics,mathematics,mathematics,1,1
+39,architecture,architecture,architecture,1,1
+40,architecture,architecture,architecture,1,1
+41,architecture,architecture,architecture,1,1
+42,architecture,architecture,architecture,1,1
+43,chemical engineering,chemical engineering,chemical engineering,1,1
+44,metallurgy,metallurgy,metallurgy,1,1
+45,,architecture,architecture and planning,0,0
+46,,civil and environmental engineering,na,0,0
+47,,mechanical engineering,mechanical engineering,0,0
+48,mathematics,mathematics,mathematics,1,1
+49,,naval architecture and marine engineering,na,0,0
+50,vocational and technical education,marketing,,0,0
+51,administration and supervision of special education,special education,,0,0
+52,chemistry,polymers,,0,0
+53,educational administration,education history,,0,0
+54,chemistry,analytical chemistry,,0,0
+55,civil engineering,civil engineering,,1,0
+56,electrical engineering,electrical engineering,,1,0
+57,industrial engineering and operations research,industrial engineering,,0,0
+58,geological sciences,geology,,0,0
+59,botany,botany,,1,0
+60,chemistry,chemistry,,1,0
+61,finance,finance,,1,0
+62,educational administration,school administration,,0,0
+63,electrical engineering,electrical engineering,,1,0
+64,engineering mechanics,materials science,,0,0
+65,agronomy,agronomy,,1,0
+66,family and child development,home economics,,0,0
+67,botany,botany,,1,0
+68,engineering science and mechanics,mechanics,,0,0
+69,food science and technology,food science,,0,0
+70,educational administration,school administration,,0,0
+71,forestry,forestry,,1,0
+72,counselor education,academic guidance counseling,,0,0
+73,aerospace and ocean engineering,aerospace materials,,0,0
+74,curriculum and instruction,curricula,,0,0
+75,administration and supervision of special education,academic guidance counseling,,0,0
+76,curriculum and instruction,curricula,,0,0
+77,counseling and student personnel services,academic guidance counseling,,0,0
+78,chemistry,polymers,,0,0
+79,materials engineering science,polymers,,0,0
+80,adult and continuing education,adult education,,0,0
+81,chemical engineering,chemical engineering,,1,0
+82,chemical engineering,chemical engineering,,1,0
+83,mining and minerals engineering,mining,,0,0
+84,geology,geochemistry,,0,0
+85,engineering mechanics,mechanics,,0,0
+86,biology,botany,,0,0
+87,animal science,livestock,,0,0
+88,wood science and forest products,forestry,,0,0
+89,,developmental psychology,,0,0
+90,educational administration,school administration,,0,0
+91,vocational and technical education,vocational education,,0,0
+92,electrical engineering,optics,,0,0
+93,family and child development,preschool education,,0,0
+94,environmental design and planning,architecture,,0,0
+95,civil engineering,civil engineering,,1,0
+96,engineering mechanics,materials science,,0,0
+97,weed science,botany,,0,0
+98,chemistry,chemistry,,1,0
+99,chemistry,polymers,,0,0
+100,comparative literature in graduate division,literature,,0,0
+101,computer science carnegie-mellon university,computer science,,0,0
+102,,history,,0,0
+103,,mathematics,,0,0
+104,chemistry in partial fulfillment of,chemistry,,0,0
+105,liquid propellant rocket engines a,aerospace materials,,0,0
+106,psychology and committee on,psychology;experiments,,0,0
+107,assistant professor william b,finance,,0,0
+108,,industrial engineering,,0,0
+109,,mechanics,,0,0
+110,history in graduate division,history,,0,0
+111,,civil engineering,,0,0
+112,chemistry in graduate division,organic chemistry,,0,0
+113,music in graduate division,music,,0,0
+114,mathematics in graduate division,mathematics,,0,0
+115,astronomy in graduate division,astronomy;astrophysics,,0,0
+116,engineering in graduate division,electrical engineering,,0,0
+117,,computer science,,0,0
+118,civil engineering carnegie-mellon university,civil engineering,,0,0
+119,history,history,,1,0
+120,electrical engineering,electrical engineering,,1,0
+121,history readers david h,history,,0,0
+122,electrical engineering,electrical engineering,,1,0
+123,,biostatistics,,0,0
+124,,psychology;experiments,,0,0
+125,,education history,,0,0
+126,,school administration,,0,0
+127,,special education,,0,0
+128,,school administration,,0,0
+129,,public health,,0,0
+130,,mathematics,,0,0
+131,,mathematics,,0,0
+132,,physics,,0,0
+133,,literature,,0,0
+134,,biology,,0,0
+135,pharmacology graduate school,pharmacology,,0,0
+136,,political science,,0,0
+137,,educational psychology,,0,0
+138,chemistry in partial fulfillment of,chemistry,,0,0
+139,chemistry in partial fulfillment of,chemistry,,0,0
+140,chemistry in partial fulfillment of,organic chemistry,,0,0
+141,chemistry in partial fulfiliment of,chemistry,,0,0
+142,,civil engineering,,0,0
+143,,organic chemistry,,0,0
+144,liquid propellant rocket engines a,aerospace materials,,0,0
+145,,electrical engineering,,0,0
+146,,sanitation,,0,0
+147,,chemistry,,0,0
+148,,industrial engineering,,0,0
+149,,electrical engineering,,0,0
+150,english and committee on,literature,,0,0
+151,physics and committee on,condensation,,0,0
+152,electrical engineering and committee on,electrical engineering,,0,0
+153,chemistry and committee on,organic chemistry,,0,0
+154,psychology and committee on,psychology;experiments;cognitive therapy;linguistics,,0,0
+155,psychology and committee on,psychology;experiments,,0,0
+156,,linguistics,,0,0
+157,university of michigan 1970,pharmacology,,0,0
+158,university of michigan 1970,organic chemistry,,0,0
+159,university of michigan 1970,school administration,,0,0
+160,university of michigan 1970,philosophy,,0,0
+161,,zoology,,0,0
+162,university of michigan 1970,analytical chemistry,,0,0
+163,university of michigan economics,economic theory,,0,0
+164,,chemical engineering,,0,0
+165,,aerospace materials,,0,0
+166,,psychology;experiments,,0,0
+167,,condensation,,0,0
+168,,organic chemistry,,0,0
+169,,electrical engineering,,0,0
+170,,industrial engineering,,0,0
+171,,organic chemistry,,0,0
+172,,mathematics,,0,0
+173,,electromagnetism,,0,0
+174,,metallurgy,,0,0
+175,,metallurgy,,0,0
+176,,organic chemistry,,0,0
+177,,aerospace materials,,0,0
+178,,biophysics,,0,0
+179,,psychology;experiments,,0,0
+180,,mechanics,,0,0
+181,,condensation,,0,0
+182,,social psychology,,0,0
+183,,organic chemistry,,0,0
+184,,civil engineering,,0,0
+185,,organic chemistry,,0,0
+186,,biology,,0,0
+187,,chemistry,,0,0
+188,,statistics,,0,0
+189,,electrical engineering,,0,0
+190,electrical engineering and committee on,optics,,0,0
+191,electrical engineering and committee on,electrical engineering,,0,0
+192,psychology in university of,social psychology,,0,0
+193,chemistry of university of south,organic chemistry,,0,0
+194,college of education in,education,,0,0
+195,department of mathematics in,mathematics,,0,0
+196,university of south florida,analytical chemistry,,0,0
+197,university of south florida,science education,,0,0
+198,department of mathematics in,mathematics,,0,0
+199,,electrical engineering,,0,0
+200,,psychology;experiments,,0,0
+201,,geography,,0,0
+202,king's college,religious history,,0,0
+203,,genetics,,0,0
+204,,aerospace materials,,0,0
+205,university of toronto 1963,mathematics,,0,0
+206,electrical engineering university of toronto,electrical engineering,,0,0
+207,,literature,,0,0
+208,educational theory a submitted in,educational evaluation,,0,0
+209,psychology,physiological psychology,,0,0
+210,medical biophysics university of toronto,biophysics,,0,0
+211,,families & family life;personal relationships;sociology,,0,0
+212,physics university of toronto,particle physics,,0,0
+213,faculty of graduate studies,polymers,,0,0
+214,,philosophy,,0,0
+215,,engineering,,0,0
+216,,cultural anthropology,,0,0
+217,,organic chemistry,,0,0
+218,,physics,,0,0
+219,,forestry,,0,0
+220,,mathematics,,0,0
+221,,physics,,0,0
+222,,organic chemistry,,0,0
+223,computer science university of melbourne,computer science,,0,0
+224,history,science history,,0,0
+225,french university of melbourne,literature;middle ages,,0,0
+226,,music,,0,0
+227,mathematics university of,mechanics,,0,0
+228,organic chemistry university of melbourne,organic chemistry,,0,0
+229,fine arts,fine arts;biographies,,0,0
+230,university of melbourne,developmental psychology,,0,0
+231,middle eastern studies university of melbourne,ancient languages,,0,0
+232,,educational psychology,,0,0
+233,,economics,,0,0
+234,,mathematics,,0,0
+235,fulfillment of requirements for,astronomy,,0,0
+236,,organic chemistry,,0,0
+237,,theoretical physics,,0,0
+238,,statistics,,0,0
+239,,condensed matter physics,,0,0
+240,,optics,,0,0
+241,theoretical physics,condensed matter physics,,0,0
+242,,mathematics,,0,0
+243,north-eastern new caledonia 1774,cultural anthropology;history of oceania,,0,0
+244,,paleoecology,,0,0
+245,,archaeology,,0,0
+246,,classical studies,,0,0
+247,international relations,international law;international relations,,0,0
+248,,demographics,,0,0
+249,,archaeology,,0,0
+250,anthropology,cultural anthropology,,0,0
+251,geography in graduate division,geography,,0,0
+252,music in graduate division,music,,0,0
+253,economics in graduate division,economic history,,0,0
+254,history of art in,fine arts,,0,0
+255,mathematics in graduate division,mathematics,,0,0
+256,education in graduate division,language arts,,0,0
+257,history in graduate division,history,,0,0
+258,zoology in graduate division,ecology,,0,0
+259,chemistry in graduate division,chemistry,,0,0
+260,education in graduate division,psychology,,0,0
+261,psychology in graduate division,psychology,,0,0
+262,,higher education,,0,0
+263,psychology in graduate division,psychotherapy,,0,0
+264,education in graduate division,psychotherapy,,0,0
+265,economics in graduate division,economics,,0,0
+266,physics in graduate division,astronomy;astrophysics,,0,0
+267,,criminology,,0,0
+268,education in graduate division,educational psychology,,0,0
+269,physics in graduate division,fluid dynamics;gases,,0,0
+270,electrical engineering,electrical engineering,,1,0
+271,chemical engineering committee,chemical engineering,,0,0
+272,presented paul por-yuan wang,condensation,,0,0
+273,mechanical engineering committee,mechanical engineering,,0,0
+274,mechanical engineering carnegie of technology,mechanical engineering,,0,0
+275,physics,condensation,,0,0
+276,pittsburgh,history,,0,0
+277,,literature,,0,0
+278,chemistry,chemistry,,1,0
+279,civil engineering committee,civil engineering,,0,0
+280,,chemical engineering,,0,0
+281,,business community,,0,0
+282,chemistry college,chemistry,,0,0
+283,computer science committee,computer science,,0,0
+284,chemical engineering college,chemical engineering,,0,0
+285,computer science department head,computer science,,0,0
+286,,chemistry,,0,0
+287,computer science carnegie-mellon university,computer science,,0,0
+288,mechanical engineering carnegie of technology,mechanics,,0,0
+289,computer science carnegie-mellon university,computer science,,0,0
+290,,geophysics,,0,0
+291,,analytical chemistry,,0,0
+292,phosphonate ester hydrolysis eugene p,organic chemistry,,0,0
+293,,religion,,0,0
+294,,social work,,0,0
+295,,fluid dynamics;gases,,0,0
+296,,geography,,0,0
+297,,computer science,,0,0
+298,,economics,,0,0
+299,,linguistics,,0,0
+300,,higher education,,0,0
+301,,education history,,0,0
+302,,education,,0,0
+303,,education,,0,0
+304,,psychology;experiments,,0,0
+305,,higher education,,0,0
+306,,chemistry,,0,0
+307,,vocational education,,0,0
+308,,academic guidance counseling,,0,0
+309,,organic chemistry,,0,0
+310,,ecology,,0,0
+311,,literature,,0,0
+312,,paleontology,,0,0
+313,,mechanics,,0,0
+314,,geophysics,,0,0
+315,,ecology,,0,0
+316,,psychology;experiments,,0,0
+317,,chemical engineering,,0,0
+318,,condensation,,0,0
+319,,chemistry,,0,0
+320,,economic theory,,0,0
+321,,physics,,0,0
+322,,ecology,,0,0
+323,,social psychology,,0,0
+324,,biology,,0,0
+325,,molecules,,0,0
+326,,finance,,0,0
+327,pharmacology graduate school,pharmacology,,0,0
+328,,chemistry,,0,0
+329,,mechanical engineering,,0,0
+330,chemistry in partial fulfillment of,organic chemistry,,0,0
+331,chemistry in partial fulfillment of,organic chemistry,,0,0
+332,chemistry in partial fulfillment of,chemistry,,0,0
+333,chemistry in partial fulfillment of,chemistry,,0,0
+334,,minority & ethnic groups;sociology,,0,0
+335,chemistry in partial fulfillment of,organic chemistry,,0,0
+336,astronomy in partial fulfillment of,astronomy;astrophysics,,0,0
+337,astronomy in partial fulfillment of,astronomy;astrophysics,,0,0
+338,chemistry in partial fulfillment of,chemistry,,0,0
+339,chemistry in partial fulfillment of,chemistry,,0,0
+340,,chemistry,,0,0
+341,astronomy in partial fulfillment of,astronomy;astrophysics,,0,0
+342,,education history,,0,0
+343,,finance,,0,0
+344,,school administration,,0,0
+345,chemistry in partial fulfillment of,organic chemistry,,0,0
+346,english in partial fulfillment of,literature,,0,0
+347,,education,,0,0
+348,,school administration,,0,0
+349,chemistry in partial fulfillment of,organic chemistry,,0,0
+350,,organic chemistry,,0,0
+351,,mechanical engineering,,0,0
+352,,organic chemistry,,0,0
+353,,organic chemistry,,0,0
+354,,chemical engineering,,0,0
+355,,mechanical engineering,,0,0
+356,,mechanical engineering,,0,0
+357,,organic chemistry,,0,0
+358,,organic chemistry,,0,0
+359,,aerospace materials,,0,0
+360,,organic chemistry,,0,0
+361,,organic chemistry,,0,0
+362,,mechanical engineering,,0,0
+363,,nuclear physics;energy,,0,0
+364,,aerospace materials,,0,0
+365,,electrical engineering,,0,0
+366,,metallurgy,,0,0
+367,,mechanical engineering,,0,0
+368,,chemical engineering,,0,0
+369,,mechanical engineering,,0,0
+370,electrical engineering and committee on,computer science,,0,0
+371,linguistics and committee on,linguistics,,0,0
+372,operations research and committee on,mathematics,,0,0
+373,,business community,,0,0
+374,electrical engineering and committee on,mathematics,,0,0
+375,geology and committee on,geology,,0,0
+376,statistics and committee on,statistics,,0,0
+377,economics and committee on,finance,,0,0
+378,biological sciences and committee on,biology,,0,0
+379,economics and committee on,finance,,0,0
+380,biology and committee on,biology,,0,0
+381,engineering economic systems and committee,engineering,,0,0
+382,geology and committee on,geology,,0,0
+383,aeronautics and astronautics and committee,aerospace materials,,0,0
+384,biological sciences and committee on,entomology;ecology,,0,0
+385,aeronautics and astronautics and committee,aerospace materials,,0,0
+386,southwestern arizona and northwestern sonora,geophysics,,0,0
+387,philosophy and committee on,philosophy,,0,0
+388,electrical engineering and committee on,electrical engineering,,0,0
+389,engineering-economic systems and,engineering,,0,0
+390,,psychology;experiments,,0,0
+391,,school administration,,0,0
+392,,education,,0,0
+393,,education history;music history;music education,,0,0
+394,,physics,,0,0
+395,,metallurgy,,0,0
+396,,linguistics,,0,0
+397,,philosophy,,0,0
+398,,mathematics,,0,0
+399,,philosophy,,0,0
+400,,chemistry,,0,0
+401,,music,,0,0
+402,,biochemistry,,0,0
+403,,geology,,0,0
+404,,linguistics,,0,0
+405,,chemical engineering,,0,0
+406,middle english and early modern english,linguistics,,0,0
+407,a dissertation submitted in partial fulfillment,finance,,0,0
+408,,philosophy,,0,0
+409,wayne county,political science,,0,0
+410,,music,,0,0
+411,nuclear collisions malcolm david shuster,nuclear physics,,0,0
+412,,aerospace materials;energy,,0,0
+413,,mechanical engineering,,0,0
+414,,music,,0,0
+415,,immunology,,0,0
+416,,music,,0,0
+417,cyclohexane solutions mostafa mahmoud emara,chemistry,,0,0
+418,,education history,,0,0
+419,,zoology,,0,0
+420,a beginning conducting class,higher education,,0,0
+421,,academic guidance counseling,,0,0
+422,,botany,,0,0
+423,,international law;international relations,,0,0
+424,,educational psychology,,0,0
+425,,nuclear physics,,0,0
+426,,nuclear physics,,0,0
+427,,ancient civilizations,,0,0
+428,,history,,0,0
+429,,literature,,0,0
+430,,biomedical research,,0,0
+431,statistical point estimation james c,statistics,,0,0
+432,,health,,0,0
+433,,geography,,0,0
+434,,mechanics,,0,0
+435,,geography,,0,0
+436,,history,,0,0
+437,,fine arts,,0,0
+438,,computer science,,0,0
+439,,oceanography,,0,0
+440,,literature,,0,0
+441,,germanic literature,,0,0
+442,,religion,,0,0
+443,,economics,,0,0
+444,,economics,,0,0
+445,,materials science,,0,0
+446,,ancient civilizations,,0,0
+447,a dissertation submitted to johns,history,,0,0
+448,,economic theory,,0,0
+449,conformity with requirements for,mechanical engineering,,0,0
+450,,mechanical engineering,,0,0
+451,,biomedical research,,0,0
+452,,chemical engineering,,0,0
+453,,engineering,,0,0
+454,,particle physics,,0,0
+455,,physics,,0,0
+456,,optics,,0,0
+457,,electrical engineering,,0,0
+458,,mathematics,,0,0
+459,,geophysics,,0,0
+460,,electrical engineering,,0,0
+461,,electrical engineering,,0,0
+462,,electrical engineering,,0,0
+463,,astronomy;astrophysics,,0,0
+464,,civil engineering,,0,0
+465,,chemistry,,0,0
+466,,mechanics,,0,0
+467,,mathematics,,0,0
+468,,astronomy;astrophysics,,0,0
+469,,physics,,0,0
+470,metal-semiconductor eutectic alloys,condensation,,0,0
+471,,mathematics,,0,0
+472,,mathematics,,0,0
+473,,mathematics,,0,0
+474,,mechanical engineering,,0,0
+475,,vocational education,,0,0
+476,,zoology,,0,0
+477,,microbiology,,0,0
+478,,polymers,,0,0
+479,saudi arabia submitted mansoor i,economics,,0,0
+480,,agricultural engineering,,0,0
+481,,recreation,,0,0
+482,,forestry,,0,0
+483,,agricultural engineering,,0,0
+484,,civil engineering,,0,0
+485,,psychotherapy,,0,0
+486,,botany,,0,0
+487,,zoology,,0,0
+488,,organic chemistry;energy,,0,0
+489,,fluid dynamics;gases,,0,0
+490,,livestock,,0,0
+491,,livestock,,0,0
+492,,school administration,,0,0
+493,,ecology,,0,0
+494,,vocational education,,0,0
+495,,economics,,0,0
+496,,civil engineering,,0,0
+497,,chemistry,,0,0
+498,,civil engineering,,0,0
+499,in partial fulfillment of requirements,vocational education,,0,0
