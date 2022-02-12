@@ -42,7 +42,7 @@ Example transaction (only the fields 1-4):
 
 ##### 1. Print the list of transactions (just print fields 1-4 of each transaction)
 
-##### 2. Increment the amount in transaction 15 (in block 10) by $10.00, and show how it can be detected by the customer.
+##### 2. Increment the amount in transaction 15 (in block 15) by $10.00, and show how it can be detected by the customer.
 ##### 3. By searching through the blockchain, print all transactions for customer 3 (C3)
 ##### 4. By searching through the blockchain, print all transactions for merchant 2 (M2)
 
