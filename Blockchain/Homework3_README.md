@@ -27,7 +27,16 @@
 ##### 1. Generating public-key/private-key pairs representing 5 customers
 ##### 2. Generating public-key/private-key pairs representing 2 merchants
 ##### 3. Generating the public-key/private-key pair for the single miner
+
+Example key-pair:  
+ ``` b'-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArclZVh8pdzpLswiLIgJb\nE46cTTuACv7aD2CgCaa3uS3hk5Ls0rLVT7sqlLecHBcyKAqeheZ3eyy4s271Yo9F\nPHP/4kiEL6urwWUXkYO2cPxq/2oK6/wTaATjPBBDr8cxjbuI+MYUXv/0c5cGHEjK\nBPAfkl+XYg/gHhmhEcYEF7mlBoelhXRbhZd/qoDROzIXFdKDug8aBYujkrSQYiGa\nBNlIywED0tpbkvC6ORGF42sJPmvfnPihKzt2/Kr4FXDO+DpCAdpdWSXc8i/ely05\n/7IdVqHncmdFmQPYaa2WDzQcixw/o8FnmiBi+sHNk5Cq9SrfzUCSZTgG702Fnble\nhQIDAQAB\n-----END PUBLIC KEY-----' ```   
+ 
+ ``` Private RSA key at 0x7FC802D9D3D0 ```
+ 
 ##### 4. Generate 25 random transactions using the above transaction format
+
+Example transaction (only the fields 1-4):  
+``` Transaction 1: M2(O7aTE93I/Z/yqdZ8y) C4(RPeH+1O8jq9fTmeQD) 04/04/2017 $87.33 ```
 
 #### Output
 
