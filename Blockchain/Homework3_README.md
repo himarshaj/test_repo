@@ -40,3 +40,4 @@
 #### References
 
 1. https://pycryptodome.readthedocs.io/en/latest/src/signature/pkcs1_v1_5.html
+2. https://stackoverflow.com/questions/59126819/py-error-message-cannot-import-name-pkcs1-15
