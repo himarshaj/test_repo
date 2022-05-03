@@ -1,7 +1,7 @@
 <template>
 <div>
 
-    <b-modal id="changeOwnership" hide-footer >
+<!--     <b-modal id="changeOwnership" hide-footer >
     <template #modal-title>
       Change Ownership
     </template>
@@ -14,7 +14,7 @@
         <b-button class="mt-2 changeOwnershipBtn" variant="outline-success" block @click="toggleModal">Change Ownership</b-button>
     </div>
 
-    </b-modal>
+    </b-modal> -->
 
     <b-button v-b-toggle.sidebar-no-header class="toggle-sidebar">Menu</b-button>
 
@@ -37,6 +37,7 @@
               <b-nav-item :active="page == 'add'" @click="(page = 'add') && hide()">Title My Vehicle</b-nav-item>
               <b-nav-item :active="page == 'practice'" @click="(page = 'practice') && hide()">Practice Questions</b-nav-item>
               <b-nav-item :active="page == 'records'" @click="(page = 'records') && hide()">Vital Records</b-nav-item>
+              <b-nav-item :active="page == 'sellVehicle'" @click="(page = 'sellVehicle') && hide()">Sell Vehicle</b-nav-item>
             </b-nav>
           </nav>
           <b-button variant="danger"  @click="hide">Close Sidebar</b-button>
@@ -89,10 +90,53 @@
     </div>
 
     <br />
+
+        <div v-if="page == 'sellVehicle'">
+    <h2>Sell My Vehicle</h2> <br />
+
+    Please click the vehicle to sell/donate.  <br/><br/>
+
+
+    <b-table 
+        style="width: 80%; left: 10%; position: absolute;" 
+        striped hover 
+        :items="vehicleData" 
+        v-if="page == 'sellVehicle'"
+
+        @row-clicked="function (item, index, event) { sellInfo(item) }"
+
+    >
+    </b-table>
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <br /><br /><br />
+    <div v-if="sold" style="text-align:center">
+        Selected Vin : {{this.selectedVin}}
+        <br /><br />
+<!--         Send to : <input type="text" v-model="toAddr" />
+        <br />
+        <br /> -->
+        <b-button class="mt-2 changeOwnershipBtn" variant="outline-success" block @click="deleteVehicleRecord">Sell Selected Vehicle</b-button>
+    </div>
+
+    </div>
+
+
+
+
     <div v-if="page == 'table'">
     <h2 >My Vehicles</h2> <br />
+    <button v-if="page == 'table'" @click="page = (page == 'sellVehicle')?'table':'sellVehicle'">
+        {{ this.page == 'sellVehicle' ? "Close": "Sell Vehicle" }}
+    </button>
 
-  </div>
+<!--           <b-card style="width: 20%; text-align: center; display: inline-block; cursor: pointer" @click="page == 'sellVehicle'">
+        Sell Vehicle
+      </b-card>
+ -->
+    </div>
     <h2 v-if="page == 'add'">Title My Vehicle</h2> <br />
 
 <!--     <button v-if="(page == 'add') || (page == 'table')" @click="page = (page == 'add')?'table':'add'">
@@ -108,9 +152,10 @@
         striped hover 
         :items="vehicleData" 
         v-if="page == 'table'"
-        @row-dblclicked="function (item, index, event) { showModal(item) }"
-    >
+        >
     </b-table>
+
+
     <div v-if="page == 'add'">
         <b-form style="width: 50%; left: 25%; position: absolute;" @submit="registerTitle">
             <b-form-group id="input-group-1" label="Vin :" label-for="input-1">
@@ -173,8 +218,9 @@ export default {
         toAddr: "",
         questions: [{
             text: 'Loading...',
-            options: []
-        }]
+            options: [] 
+        }],
+        sold: false,
     }
   },
   props: {
@@ -185,6 +231,7 @@ export default {
     changeOwnership: {type: Function},
     getPracticeQuestions: {type: Function},
     upgraderealid: {type: Function},
+    deleteVehicle:{type: Function}
   },
 
   mounted: async function() {
@@ -236,12 +283,21 @@ export default {
         this.$bvModal.show("changeOwnership");
     },
 
-    toggleModal: function() {
-        this.changeOwnership(this.selectedVin, this.toAddr);
-        this.$bvModal.hide("changeOwnership");
+    sellInfo: function(item) {
+        this.selectedVin = item.Vin;
+        this.sold = true;
+        // console.log(item)
+    },
+
+    deleteVehicleRecord: function() {
+        console.log("Delete Vehicle")
+        console.log(this.selectedVin)
+        this.deleteVehicle(this.selectedVin)
+        // this.changeOwnership(this.selectedVin, this.toAddr);
+        // this.$bvModal.hide("changeOwnership");
     },
     fetchVehicleData: async function() {
-      console.log("Here")
+      // console.log("Here")
       let data = await this.getVehicles({from: localStorage.getItem("realId")});
       let ndata = [];
       for(let i = 0; i < data.length; ++i){

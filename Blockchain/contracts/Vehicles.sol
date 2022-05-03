@@ -38,7 +38,7 @@ contract Vehicles {
     }
 
     function changeOwnership(string memory vin, address to, string memory licenseNumber) public {
-        // VehicleData memory vdata;
+        // VehicleData memory vdata;        
         uint RegExpdate = block.timestamp + 365 days;
         for (uint i = 0; i < vehicles[msg.sender].length; i++) {
             if (StringUtils.compare(vehicles[msg.sender][i].vin, vin) == 0) {

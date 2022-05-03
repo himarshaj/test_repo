@@ -18,6 +18,7 @@
       :changeOwnership="changeOwnership" 
       :getPracticeQuestions="getPracticeQuestions" 
       :upgraderealid="upgraderealid"
+      :deleteVehicle="deleteVehicle"
       v-if="isRegistered()"></Homepage>
   </div>
 </template>
@@ -160,12 +161,18 @@ export default {
         users_contract.deactiveUser({from: localStorage.getItem("realId")});
     },
 
+    deleteVehicle: async function (vin) {
+        let vehicles = await Vehicles.deployed()
+        console.log("in app vue vin")
+        vehicles.deleteVehicle(vin, {from: localStorage.getItem("realId")});
+    },
+
     getVehicles: async function () {
         console.log("getVehicles")
         let vehicles = await Vehicles.deployed()
         console.log("cintract")
         let data = await vehicles.getVehicles({from: localStorage.getItem("realId")});
-        console.log(data[0])
+        // console.log(data[0])
         return data.filter((item) => item[5]);
     },
     
