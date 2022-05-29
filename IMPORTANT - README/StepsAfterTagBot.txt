@@ -1,0 +1,87 @@
+After tag bot steps:
+Stage 2 Cleaning
+Temporal analysis
+
+
+================================
+Separate bot & human
+================================
+
+cat 20120202.wayback.access.log.sorted.tag.cleaneds2.out2 | awk -F '\t' '$2!~"1"{print}' > humanVSbots/20120202.wayback.access.log.sorted.tag.cleaneds2.out2.humansess
+cat 20120202.wayback.access.log.sorted.tag.cleaneds2.out2 | awk -F '\t' '$2~"1"{print}' > humanVSbots/20120202.wayback.access.log.sorted.tag.cleaneds2.out2.robotsess
+
+cat pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out2 | awk -F '\t' '$2!~"1"{print}' > humanVSbots/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out2.humansess
+cat pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out2 | awk -F '\t' '$2~"1"{print}' > humanVSbots/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out2.robosess
+
+
+RUN===
+nohup cat 20190207-wwwb-front1234-access.log.sorted.tag.cleaneds2.out2 | awk -F '\t' '$2!~"1"{print}' > humanVSbots/20190207-wwwb-front1234-access.log.sorted.tag.cleaneds2.out2.humansess &
+nohup cat 20190207-wwwb-front1234-access.log.sorted.tag.cleaneds2.out2| awk -F '\t' '$2~"1"{print}' > humanVSbots/20190207-wwwb-front1234-access.log.sorted.tag.cleaneds2.out2.robotsess &
+
+================================
+Get memdate
+================================
+nohup python3 /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/temporal_analysis.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/20120202.wayback.access.log.sorted.tag.cleaneds2.out2.humansess /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/IA2012.memdate.humansess /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/IA2012.multimatch.humansess &
+
+nohup python3 /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/temporal_analysis.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/20120202.wayback.access.log.sorted.tag.cleaneds2.out2.robotsess /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/IA2012.memdate.robotsess /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/IA2012.multimatch.robotsess &
+
+nohup python3 /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/temporal_analysis_PT.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/pt.logfile.2019-07-07.sorted.tag.cleaneds2.out2.humansess /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/PT2019.memdate.humansess /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/PT2019.multimatch.humansess &
+
+nohup python3 /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/temporal_analysis_PT.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/pt.logfile.2019-07-07.sorted.tag.cleaneds2.out2.robotsess /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/PT2019.memdate.robotsess /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/PT2019.multimatch.robotsess &
+
+
+RUN===
+nohup python3 /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/temporal_analysis.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/20190207.wayback.access.log.sorted.tag.cleaneds2.out2.humansess /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/IA2019.memdate.humansess /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/IA2019.multimatch.humansess &
+
+nohup python3 /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/temporal_analysis.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/20190207.wayback.access.log.sorted.tag.cleaneds2.out2.robotsess /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/IA2019.memdate.robotsess /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/IA2019.multimatch.robotsess &
+
+
+================================
+Get memyearmonthdate
+================================
+nohup cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/IA2012.memdate.humansess | grep -oP '\d{14}' | cut -c-8 | sort | uniq -c | sort -rn > /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/IA2012.mem_ymd.humansess &
+
+nohup cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/IA2012.memdate.robotsess | grep -oP '\d{14}' | cut -c-8 | sort | uniq -c | sort -rn > /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/IA2012.mem_ymd.robotsess &
+
+
+nohup cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/PT2019.memdate.humansess | grep -oP '\d{14}' | cut -c-8 | sort | uniq -c | sort -rn > /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/PT2019.mem_ymd.humansess &
+
+nohup cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/PT2019.memdate.robotsess | grep -oP '\d{14}' | cut -c-8 | sort | uniq -c | sort -rn > /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/PT2019.mem_ymd.robotsess &
+
+RUN===
+nohup cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/IA2019.memdate.humansess | grep -oP '\d{14}' | cut -c-8 | sort | uniq -c | sort -rn > /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/IA2019.mem_ymd.humansess &
+
+nohup cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/IA2019.memdate.robotsess | grep -oP '\d{14}' | cut -c-8 | sort | uniq -c | sort -rn > /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/IA2019.mem_ymd.robotsess &
+
+================================
+Final output
+================================
+
+* IA 2012
+
+nohup cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/IA2012.mem_ymd.humansess | awk '{print "IA_20120202_human,"$2","$1}' > /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/final_out_plot/memdate_out_IA2012.csv &
+
+nohup cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/IA2012.mem_ymd.robotsess | awk '{print "IA_20120202_robot,"$2","$1}' >> /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/final_out_plot/memdate_out_IA2012.csv & 
+
+* PT 2019
+
+nohup cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/PT2019.mem_ymd.humansess | awk '{print "PT_20190207_human,"$2","$1}' > /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/final_out_plot/memdate_out_PT2019.csv &
+
+nohup cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/PT2019.mem_ymd.robotsess | awk '{print "PT_20190207_robot,"$2","$1}' >> /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/final_out_plot/memdate_out_PT2019.csv & 
+
+
+RUN===
+* IA 2019
+
+nohup zcat /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/IA2019.mem_ymd.humansess | awk '{print "IA_20190207_human,"$2","$1}' > /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/final_out_plot/memdate_out_IA2019.csv &
+
+nohup zcat IA.20190207.Status200.memyearmonth.gz| awk '{print "IA_20190207_robot,"$2","$1}' >> /data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/final_out_plot/memdate_out_IA2019.csv & 
+
+
+=====================================
+Getting the data to the local machine
+=====================================
+
+scp -r cs_hjaya002@wsdl-docker-private.research.cs.odu.edu:/data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/after_cleaning_s2/final_out_plot/ .
+
+scp -r cs_hjaya002@linux.cs.odu.edu:/home/cs_hjaya002/final_out_plot/ /home/marsh/Documents/Research/AccessPattern/temporal_analysis/fullday/

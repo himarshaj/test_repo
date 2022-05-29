@@ -1,0 +1,271 @@
+Create result table
+
+1. Getting session result
+
+f=20120202.wayback.access.log.sorted.v1.tag
+cut -d" " -f1 $f > a
+cut -f2 $f > b
+paste a b > ia2012.ip_v1.tag.tsv
+rm a b
+
+
+f=pt.logfile.2019-07-07.sorted.v1.tag
+cut -d" " -f1 $f > a
+cut -f2 $f > b
+paste a b > pt2019.ip_v1.tag.tsv
+rm a b
+
+
+f=20190207-wwwb-front1234-access.log.sorted.v1.tag
+cut -d" " -f1 $f > a
+cut -f2 $f > b
+paste a b > ia2019.ip_v1.tag.tsv
+rm a b
+
+
+=======================
+IA - 2012
+=======================
+
+1. Getting Session Result
+
+file=ia2012.ip_v1.tag.tsv
+
+echo $file
+
+cat $file|awk '$2~/(1)/' | sort| uniq | wc -l >> ia12_sess.txt
+cat $file|awk '$2~/^(1)/' | sort| uniq | wc -l >> ia12_sess.txt
+cat $file|awk '$2~/^.(1)/' | sort| uniq | wc -l >> ia12_sess.txt
+cat $file|awk '$2~/^..(1)/' | sort| uniq | wc -l >> ia12_sess.txt
+cat $file|awk '$2~/^...(1)/' | sort| uniq | wc -l >> ia12_sess.txt
+cat $file|awk '$2~/^....(1)/' | sort| uniq | wc -l >> ia12_sess.txt
+cat $file|awk '$2~/^.....(1)/' | sort| uniq | wc -l >> ia12_sess.txt
+cat $file|awk '$2~/^......(1)/' | sort| uniq | wc -l >> ia12_sess.txt
+
+
+2. Getting request result
+
+f=ia2012.ip_v1.tag.tsv
+
+echo $f
+
+cat $f| awk '$2~/(1)/' |wc -l >> ia12_req.txt
+cat $f| awk '$2~/^(1)/' |wc -l >> ia12_req.txt
+cat $f| awk '$2~/^.(1)/' |wc -l >> ia12_req.txt
+cat $f| awk '$2~/^..(1)/' |wc -l >> ia12_req.txt
+cat $f| awk '$2~/^...(1)/' |wc -l >> ia12_req.txt
+cat $f| awk '$2~/^....(1)/' |wc -l >> ia12_req.txt
+cat $f| awk '$2~/^.....(1)/' |wc -l >> ia12_req.txt
+cat $f| awk '$2~/^......(1)/' |wc -l >> ia12_req.txt
+cat $f| awk '$2~/^.......(1)/' |wc -l >> ia12_req.txt
+cat $f| awk '$2~/^........(1)/' |wc -l >> ia12_req.txt
+
+
+=======================
+IA - 2019
+=======================
+
+Request result for IA 2019 
+
+f=ia2019.ip_v1.tag.tsv
+
+echo $f
+
+cat $f| awk '$2~/(1)/' |wc -l >> ia19_req.txt
+cat $f| awk '$2~/^(1)/' |wc -l >> ia19_req.txt
+cat $f| awk '$2~/^.(1)/' |wc -l >> ia19_req.txt
+cat $f| awk '$2~/^..(1)/' |wc -l >> ia19_req.txt
+cat $f| awk '$2~/^...(1)/' |wc -l >> ia19_req.txt
+cat $f| awk '$2~/^....(1)/' |wc -l >> ia19_req.txt
+cat $f| awk '$2~/^.....(1)/' |wc -l >> ia19_req.txt
+cat $f| awk '$2~/^......(1)/' |wc -l >> ia19_req.txt
+cat $f| awk '$2~/^.......(1)/' |wc -l >> ia19_req.txt
+cat $f| awk '$2~/^........(1)/' |wc -l >> ia19_req.txt
+
+Session result for IA 2019
+
+
+file=ia2019.ip_v1.tag.tsv
+
+echo $file
+
+cat $file|awk '$2~/(1)/' | sort| uniq | wc -l >> ia19_sess.txt
+cat $file|awk '$2~/^(1)/' | sort| uniq | wc -l >> ia19_sess.txt
+cat $file|awk '$2~/^.(1)/' | sort| uniq | wc -l >> ia19_sess.txt
+cat $file|awk '$2~/^..(1)/' | sort| uniq | wc -l >> ia19_sess.txt
+cat $file|awk '$2~/^...(1)/' | sort| uniq | wc -l >> ia19_sess.txt
+cat $file|awk '$2~/^....(1)/' | sort| uniq | wc -l >> ia19_sess.txt
+cat $file|awk '$2~/^.....(1)/' | sort| uniq | wc -l >> ia19_sess.txt
+cat $file|awk '$2~/^......(1)/' | sort| uniq | wc -l >> ia19_sess.txt
+
+
+
+==============================================================================
+
+PT
+
+==============================================================================
+
+1. Getting session result
+
+file=pt2019.ip_v1.tag.tsv
+
+echo $file
+
+cat $file|awk '$2~/(1)/' | sort| uniq | wc -l >> pt19_sess.txt
+cat $file|awk '$2~/^(1)/' | sort| uniq | wc -l >> pt19_sess.txt
+cat $file|awk '$2~/^.(1)/' | sort| uniq | wc -l >> pt19_sess.txt
+cat $file|awk '$2~/^..(1)/' | sort| uniq | wc -l >> pt19_sess.txt
+cat $file|awk '$2~/^...(1)/' | sort| uniq | wc -l >> pt19_sess.txt
+cat $file|awk '$2~/^....(1)/' | sort| uniq | wc -l >> pt19_sess.txt
+cat $file|awk '$2~/^.....(1)/' | sort| uniq | wc -l >> pt19_sess.txt
+cat $file|awk '$2~/^......(1)/' | sort| uniq | wc -l >> pt19_sess.txt
+
+
+2. Getting request result
+
+f=pt2019.ip_v1.tag.tsv
+
+echo $f
+
+cat $f| awk '$2~/(1)/' |wc -l >> pt19_req.txt
+cat $f| awk '$2~/^(1)/' |wc -l >> pt19_req.txt
+cat $f| awk '$2~/^.(1)/' |wc -l >> pt19_req.txt
+cat $f| awk '$2~/^..(1)/' |wc -l >> pt19_req.txt
+cat $f| awk '$2~/^...(1)/' |wc -l >> pt19_req.txt
+cat $f| awk '$2~/^....(1)/' |wc -l >> pt19_req.txt
+cat $f| awk '$2~/^.....(1)/' |wc -l >> pt19_req.txt
+cat $f| awk '$2~/^......(1)/' |wc -l >> pt19_req.txt
+cat $f| awk '$2~/^.......(1)/' |wc -l >> pt19_req.txt
+cat $f| awk '$2~/^........(1)/' |wc -l >> pt19_req.txt
+
+
+======
+Getting results after Cleaned s2
+======
+
+f=pt.logfile.2019-07-07.sorted.v1.tag.cleaneds2.out2
+cut -d" " -f1 $f > a
+cut -f2 $f > b
+paste a b > pt2019.ip_v1.tag.cleaneds2.tsv
+rm a b
+ 
+
+f=20120202.wayback.access.log.sorted.v1.tag.cleaneds2.out2
+cut -d" " -f1 $f > a
+cut -f2 $f > b
+paste a b > ia2012.ip_v1.tag.cleaneds2.tsv
+rm a b
+ 
+f=20190207-wwwb-front1234-access.log.sorted.v1.tag.cleaneds2.out2
+cut -d" " -f1 $f > a
+cut -f2 $f > b
+paste a b > ia2019.ip_v1.tag.cleaneds2.tsv
+rm a b
+ 
+1. Getting Session Result
+
+file=ia2012.ip_v1.tag.cleaneds2.tsv
+
+echo $file
+
+cat $file|awk '$2~/(1)/' | sort| uniq | wc -l >> ia12_sess.txt
+cat $file|awk '$2~/^(1)/' | sort| uniq | wc -l >> ia12_sess.txt
+cat $file|awk '$2~/^.(1)/' | sort| uniq | wc -l >> ia12_sess.txt
+cat $file|awk '$2~/^..(1)/' | sort| uniq | wc -l >> ia12_sess.txt
+cat $file|awk '$2~/^...(1)/' | sort| uniq | wc -l >> ia12_sess.txt
+cat $file|awk '$2~/^....(1)/' | sort| uniq | wc -l >> ia12_sess.txt
+cat $file|awk '$2~/^.....(1)/' | sort| uniq | wc -l >> ia12_sess.txt
+cat $file|awk '$2~/^......(1)/' | sort| uniq | wc -l >> ia12_sess.txt
+
+
+2. Getting request result
+
+f=ia2012.ip_v1.tag.cleaneds2.tsv
+
+echo $f
+
+cat $f| awk '$2~/(1)/' |wc -l >> ia12_req.txt
+cat $f| awk '$2~/^(1)/' |wc -l >> ia12_req.txt
+cat $f| awk '$2~/^.(1)/' |wc -l >> ia12_req.txt
+cat $f| awk '$2~/^..(1)/' |wc -l >> ia12_req.txt
+cat $f| awk '$2~/^...(1)/' |wc -l >> ia12_req.txt
+cat $f| awk '$2~/^....(1)/' |wc -l >> ia12_req.txt
+cat $f| awk '$2~/^.....(1)/' |wc -l >> ia12_req.txt
+cat $f| awk '$2~/^......(1)/' |wc -l >> ia12_req.txt
+cat $f| awk '$2~/^.......(1)/' |wc -l >> ia12_req.txt
+cat $f| awk '$2~/^........(1)/' |wc -l >> ia12_req.txt
+
+IA 2019
+
+Request result for IA 2019 
+
+f=ia2019.ip_v1.tag.cleaneds2.tsv
+
+echo $f
+
+cat $f| awk '$2~/(1)/' |wc -l >> ia19_req.txt
+cat $f| awk '$2~/^(1)/' |wc -l >> ia19_req.txt
+cat $f| awk '$2~/^.(1)/' |wc -l >> ia19_req.txt
+cat $f| awk '$2~/^..(1)/' |wc -l >> ia19_req.txt
+cat $f| awk '$2~/^...(1)/' |wc -l >> ia19_req.txt
+cat $f| awk '$2~/^....(1)/' |wc -l >> ia19_req.txt
+cat $f| awk '$2~/^.....(1)/' |wc -l >> ia19_req.txt
+cat $f| awk '$2~/^......(1)/' |wc -l >> ia19_req.txt
+cat $f| awk '$2~/^.......(1)/' |wc -l >> ia19_req.txt
+cat $f| awk '$2~/^........(1)/' |wc -l >> ia19_req.txt
+
+Session result for IA 2019
+
+
+file=ia2019.ip_v1.tag.cleaneds2.tsv
+
+echo $file
+
+cat $file|awk '$2~/(1)/' | sort| uniq | wc -l >> ia19_sess.txt
+cat $file|awk '$2~/^(1)/' | sort| uniq | wc -l >> ia19_sess.txt
+cat $file|awk '$2~/^.(1)/' | sort| uniq | wc -l >> ia19_sess.txt
+cat $file|awk '$2~/^..(1)/' | sort| uniq | wc -l >> ia19_sess.txt
+cat $file|awk '$2~/^...(1)/' | sort| uniq | wc -l >> ia19_sess.txt
+cat $file|awk '$2~/^....(1)/' | sort| uniq | wc -l >> ia19_sess.txt
+cat $file|awk '$2~/^.....(1)/' | sort| uniq | wc -l >> ia19_sess.txt
+cat $file|awk '$2~/^......(1)/' | sort| uniq | wc -l >> ia19_sess.txt
+
+================================================
+To get examples
+================================================
+
+
+f=pt2019.ip_v1.tag.tsv
+
+cat $f| awk '$2~/^(1)/' | head    HEAD
+cat $f| awk '$2~/^.(1)/' | head    Known Bots
+cat $f| awk '$2~/^..(1)/' | head    #UA per IP
+cat $f| awk '$2~/^...(1)/' | head  Robots.txt
+cat $f| awk '$2~/^....(1)/' | head  Image to HTML ratio
+cat $f| awk '$2~/^.....(1)/' | head  Browsing Speed
+
+No need
+cat $f| awk '$2~/^......(1)/' | head pt19_req.txt
+cat $f| awk '$2~/^.......(1)/' |wc -l >> pt19_req.txt
+cat $f| awk '$2~/^........(1)/' |wc -l >> pt19_req.txt
+
+
+1. Select sessions with 5 or 6 requests detected by each heuristic
+
+cat $f| awk '$2~/^(1)/ {print $1}' | uniq -c | sort -n | awk '$1==6' | head
+
+cat $f| awk '$2~/^..(1)/ {print $1}' | uniq -c | sort -n | awk '$1==6' | head
+
+cat $f| awk '$2~/^...(1)/ {print $1}' | uniq -c | sort -n | awk '$1==6' | head
+
+
+ia2019.ip_v1.tag.tsv
+
+cat $fia19 | awk '$2~/^....(1)/ {print $1}' | uniq -c | sort -n | awk '$1==6' | head
+
+cat $fia19 | awk '$2~/^....(1)/ {print $1}' | uniq -c | sort -n | awk '$1==6' | head
+
+
+cat $fia19 | awk '$2~/^.....(1)/ {print $1}' | uniq -c | sort -n | awk '$1==6' | head
+

@@ -1,0 +1,13 @@
+i=/data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/20120202.wayback.access.log.sorted.v1-01
+code=/data/LogAnalysis/access_pattern/code
+data=/data/LogAnalysis/access_pattern/datasets/fullday_sample
+knownbots='/data/LogAnalysis/access_pattern/heuristic/sibot/knownbots.tsv'
+
+python3 $code/tag_modify_0.py $data/session_data/20120202.wayback.access.log.sorted.sess.metadata_v1 $knownbots $i $i.tag  
+
+--------------
+code=/data/LogAnalysis/access_pattern/code
+data=/data/LogAnalysis/access_pattern/datasets/fullday_sample
+file=20120202.wayback.access.log.sorted
+
+python3 $code/sess_info_modify_0.py $data/session_data/$file.sess_v1.gz $data/session_data/$file.sess.metadata_v1

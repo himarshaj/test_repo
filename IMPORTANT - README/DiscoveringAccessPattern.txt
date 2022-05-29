@@ -1,0 +1,91 @@
+#Discovering Access Pattern Commands
+
+==PT==
+
+1. Separating human vs bot sessions
+cat pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1 | awk -F '\t' '$4!~"1"{print}' | uniq > humanVSbots/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.humansess
+cat pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1 | awk -F '\t' '$4~"1"{print}' | uniq > humanVSbots/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.robosess
+cat pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out2 | awk -F '\t' '$2!~"1"{print}' | uniq > humanVSbots/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out2.humansess
+cat pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out2 | awk -F '\t' '$2~"1"{print}' | uniq > humanVSbots/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out2.robosess
+
+
+2. AP code
+
+python3 /data/LogAnalysis/access_pattern/code/ap_PT2019_modify.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.humansess /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.humansess.ap 
+
+python3 /data/LogAnalysis/access_pattern/code/ap_PT2019_modify.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.robosess /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.robosess.ap 
+
+3. Checking output
+
+cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/pt.logfile.2019-07-07.sorted.v1.tag.cleaneds2.out1.humansess.ap | cut -f2 | sort | uniq -c
+
+cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/pt.logfile.2019-07-07.sorted.v1.tag.cleaneds2.out1.robosess.ap | cut -f2 | sort | uniq -c
+
+==IA 2012==
+
+1. Files are already separated
+2. AP code
+
+python3 /data/LogAnalysis/access_pattern/code/ap_IA2012_19_modify.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/20120202.wayback.access.log.sorted.v2.tag.cleaneds2.out1.humansess /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20120202.wayback.access.log.sorted.v2.tag.cleaneds2.out1.humansess.ap
+
+python3 /data/LogAnalysis/access_pattern/code/ap_IA2012_19_modify.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/20120202.wayback.access.log.sorted.v2.tag.cleaneds2.out1.robosess  /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20120202.wayback.access.log.sorted.v2.tag.cleaneds2.out1.robosess.ap
+
+==IA 2019==
+
+
+1. Files are already separated
+2. AP code
+
+python3 /data/LogAnalysis/access_pattern/code/ap_IA2012_19_modify.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/20190207-wwwb-front1234-access.log.sorted.v2.tag.cleaneds2.out1.humansess /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20190207-wwwb-front1234-access.log.sorted.v2.tag.cleaneds2.out1.humansess.ap 
+
+python3 /data/LogAnalysis/access_pattern/code/ap_IA2012_19_modify.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/20190207-wwwb-front1234-access.log.sorted.v2.tag.cleaneds2.out1.robosess /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20190207-wwwb-front1234-access.log.sorted.v2.tag.cleaneds2.out1.robosess.ap
+
+====
+
+GET ACCESS PATTERNS =============
+
+python3 /data/LogAnalysis/access_pattern/code/ap_PT2019_modify_1.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.humansess /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.humansess.ap_1 
+
+python3 /data/LogAnalysis/access_pattern/code/ap_PT2019_modify_1.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.robosess /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.robosess.ap_1 
+
+python3 /data/LogAnalysis/access_pattern/code/ap_IA2012_19_modify_1.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/20190207-wwwb-front1234-access.log.sorted.v2.tag.cleaneds2.out1.humansess /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20190207-wwwb-front1234-access.log.sorted.v2.tag.cleaneds2.out1.humansess.ap_1
+
+python3 /data/LogAnalysis/access_pattern/code/ap_IA2012_19_modify_1.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/20190207-wwwb-front1234-access.log.sorted.v2.tag.cleaneds2.out1.robosess /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20190207-wwwb-front1234-access.log.sorted.v2.tag.cleaneds2.out1.robosess.ap_1
+
+python3 /data/LogAnalysis/access_pattern/code/ap_IA2012_19_modify_1.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/20120202.wayback.access.log.sorted.v2.tag.cleaneds2.out1.humansess /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20120202.wayback.access.log.sorted.v2.tag.cleaneds2.out1.humansess.ap_1
+
+python3 /data/LogAnalysis/access_pattern/code/ap_IA2012_19_modify_1.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/20120202.wayback.access.log.sorted.v2.tag.cleaneds2.out1.robosess /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20120202.wayback.access.log.sorted.v2.tag.cleaneds2.out1.robosess.ap_1
+
+
+cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.humansess.ap_1  | cut -f6,5 | sort | sort -k2 | uniq -c 
+cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.robosess.ap_1 | cut -f6,5 | sort | sort -k2 | uniq -c 
+cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20190207-wwwb-front1234-access.log.sorted.v2.tag.cleaneds2.out1.humansess.ap_1  | cut -f6,5 | sort | sort -k2 | uniq -c 
+cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20190207-wwwb-front1234-access.log.sorted.v2.tag.cleaneds2.out1.robosess.ap_1  | cut -f6,5 | sort | sort -k2 | uniq -c 
+cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20120202.wayback.access.log.sorted.v2.tag.cleaneds2.out1.humansess.ap_1  | cut -f6,5 | sort | sort -k2 | uniq -c 
+cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20120202.wayback.access.log.sorted.v2.tag.cleaneds2.out1.robosess.ap_1  | cut -f6,5 | sort | sort -k2 | uniq -c 
+ 
+
+GET ACCESS PATTERNS - May 28th =============
+
+python3 /data/LogAnalysis/access_pattern/code/ap_PT2019_modify_5.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.humansess /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.humansess.ap_5 
+
+python3 /data/LogAnalysis/access_pattern/code/ap_PT2019_modify_5.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.robosess /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.robosess.ap_5 
+
+python3 /data/LogAnalysis/access_pattern/code/ap_IA2012_19_modify_5.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/20190207-wwwb-front1234-access.log.sorted.v2.tag.cleaneds2.out1.humansess /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20190207-wwwb-front1234-access.log.sorted.v2.tag.cleaneds2.out1.humansess.ap_5
+
+python3 /data/LogAnalysis/access_pattern/code/ap_IA2012_19_modify_5.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/20190207-wwwb-front1234-access.log.sorted.v2.tag.cleaneds2.out1.robosess /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20190207-wwwb-front1234-access.log.sorted.v2.tag.cleaneds2.out1.robosess.ap_5
+
+python3 /data/LogAnalysis/access_pattern/code/ap_IA2012_19_modify_5.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/20120202.wayback.access.log.sorted.v2.tag.cleaneds2.out1.humansess /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20120202.wayback.access.log.sorted.v2.tag.cleaneds2.out1.humansess.ap_5
+
+python3 /data/LogAnalysis/access_pattern/code/ap_IA2012_19_modify_5.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/20120202.wayback.access.log.sorted.v2.tag.cleaneds2.out1.robosess /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20120202.wayback.access.log.sorted.v2.tag.cleaneds2.out1.robosess.ap_5
+ 
+
+cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.humansess.ap_5  | cut -f6,5 | sort | sort -k2 | uniq -c 
+cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.robosess.ap_5  | cut -f6,5 | sort | sort -k2 | uniq -c 
+cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20190207-wwwb-front1234-access.log.sorted.v2.tag.cleaneds2.out1.humansess.ap_5  | cut -f6,5 | sort | sort -k2 | uniq -c 
+cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20190207-wwwb-front1234-access.log.sorted.v2.tag.cleaneds2.out1.robosess.ap_5  | cut -f6,5 | sort | sort -k2 | uniq -c 
+cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20120202.wayback.access.log.sorted.v2.tag.cleaneds2.out1.humansess.ap_5  | cut -f6,5 | sort | sort -k2 | uniq -c 
+cat /data/LogAnalysis/access_pattern/datasets/fullday_sample/access_patterns/20120202.wayback.access.log.sorted.v2.tag.cleaneds2.out1.robosess.ap_5  | cut -f6,5 | sort | sort -k2 | uniq -c 
+ 
+
+

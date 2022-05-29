@@ -1,0 +1,141 @@
+Temporal analysis
+
+zcat 20120202.wayback.access.log.sorted.gz | awk '$9==503 {print}' | gzip > status_code/20120202.IA.Status302.gz &
+zcat 20120202.wayback.access.log.sorted.gz | awk '$9==200 {print}' | gzip > status_code/20120202.IA.Status200.gz &
+zcat 20120202.wayback.access.log.sorted.gz | awk '$9==404 {print}' | gzip > status_code/20120202.IA.Status404.gz &
+
+zcat 20190207-wwwb-front1234-access.log.sorted.gz | awk '$9==302 {print}' | gzip > status_code/20190207.IA.Status302.gz &
+zcat 20190207-wwwb-front1234-access.log.sorted.gz | awk '$9==200 {print}' | gzip > status_code/20190207.IA.Status200.gz &
+zcat 20190207-wwwb-front1234-access.log.sorted.gz | awk '$9==404 {print}' | gzip > status_code/20190207.IA.Status404.gz &
+
+zcat pt.logfile.2019-07-07.sorted.gz | awk '$9==404 {print}' | gzip > status_code/20190207.PT.Status404.gz &
+zcat pt.logfile.2019-07-07.sorted.gz | awk '$9==302 {print}' | gzip > status_code/20190207.PT.Status302.gz &
+zcat pt.logfile.2019-07-07.sorted.gz | awk '$9==200 {print}' | gzip > status_code/20190207.PT.Status200.gz &
+
+=========
+
+Directory: /data/LogAnalysis/access_pattern/datasets/fullday_sample/status_code
+
+* IA 2012
+
+nohup python3 temporal_analysis.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/status_code/20120202.IA.Status302.gz  status_code/IA.20120202.Status302.memdate.gz status_code/IA.20120202.Status302.multimatch.gz &
+
+nohup python3 temporal_analysis.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/status_code/20120202.IA.Status200.gz  status_code/IA.20120202.Status200.memdate.gz status_code/IA.20120202.Status200.multimatch.gz &
+
+nohup python3 temporal_analysis.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/status_code/20120202.IA.Status404.gz  status_code/IA.20120202.Status404.memdate.gz status_code/IA.20120202.Status404.multimatch.gz &
+
+* IA 2019
+
+nohup python3 temporal_analysis.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/status_code/20190207.IA.Status302.gz  status_code/IA.20190207.Status302.memdate.gz status_code/IA.20190207.Status302.multimatch.gz &
+
+nohup python3 temporal_analysis.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/status_code/20190207.IA.Status200.gz  status_code/IA.20190207.Status200.memdate.gz status_code/IA.20190207.Status200.multimatch.gz &
+
+nohup python3 temporal_analysis.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/status_code/20190207.IA.Status404.gz  status_code/IA.20190207.Status404.memdate.gz status_code/IA.20190207.Status404.multimatch.gz &
+
+* PT 2019
+
+nohup python3 temporal_analysis_PT.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/status_code/20190207.PT.Status302.gz  status_code/PT.20190207.Status302.memdate.gz status_code/PT.20190207.Status302.multimatch.gz &
+
+nohup python3 temporal_analysis_PT.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/status_code/20190207.PT.Status200.gz  status_code/PT.20190207.Status200.memdate.gz status_code/PT.20190207.Status200.multimatch.gz &
+
+nohup python3 temporal_analysis_PT.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/status_code/20190207.PT.Status404.gz  status_code/PT.20190207.Status404.memdate.gz status_code/PT.20190207.Status404.multimatch.gz &
+
+=========
+To do:
+
+* IA 2012
+
+nohup zcat IA.20120202.Status302.memdate.gz | grep -oP '\d{14}' | cut -c-6 | sort | uniq -c | sort -rn | gzip > IA.20120202.Status302.memyearmonth.gz &
+
+nohup zcat IA.20120202.Status200.memdate.gz | grep -oP '\d{14}' | cut -c-6 | sort | uniq -c | sort -rn | gzip > IA.20120202.Status200.memyearmonth.gz &
+
+nohup zcat IA.20120202.Status404.memdate.gz | grep -oP '\d{14}' | cut -c-6 | sort | uniq -c | sort -rn | gzip > IA.20120202.Status404.memyearmonth.gz &
+
+* IA 2019
+
+nohup zcat IA.20190207.Status302.memdate.gz | grep -oP '\d{14}' | cut -c-6 | sort | uniq -c | sort -rn | gzip > IA.20190207.Status302.memyearmonth.gz &
+
+nohup zcat IA.20190207.Status200.memdate.gz | grep -oP '\d{14}' | cut -c-6 | sort | uniq -c | sort -rn | gzip > IA.20190207.Status200.memyearmonth.gz &
+
+nohup zcat IA.20190207.Status404.memdate.gz | grep -oP '\d{14}' | cut -c-6 | sort | uniq -c | sort -rn | gzip > IA.20190207.Status404.memyearmonth.gz &
+
+* PT 2019
+
+nohup zcat PT.20190207.Status302.memdate.gz | grep -oP '\d{14}' | cut -c-6 | sort | uniq -c | sort -rn | gzip > PT.20190207.Status302.memyearmonth.gz &
+
+nohup zcat PT.20190207.Status200.memdate.gz | grep -oP '\d{14}' | cut -c-6 | sort | uniq -c | sort -rn | gzip > PT.20190207.Status200.memyearmonth.gz &
+
+nohup zcat PT.20190207.Status404.memdate.gz | grep -oP '\d{14}' | cut -c-6 | sort | uniq -c | sort -rn | gzip > PT.20190207.Status404.memyearmonth.gz &
+
+=========
+
+output
+
+* IA 2012
+
+nohup zcat IA.20120202.Status302.memyearmonth.gz | awk '{print "IA_20120202_302,"$2","$1}' > memdate_out_IA2012.csv 
+nohup zcat IA.20120202.Status200.memyearmonth.gz| awk '{print "IA_20120202_200,"$2","$1}' >> memdate_out_IA2012.csv & 
+nohup zcat IA.20120202.Status404.memyearmonth.gz | awk '{print "IA_20120202_404,"$2","$1}' >> memdate_out_IA2012.csv & 
+
+* IA 2019
+
+nohup zcat IA.20190207.Status302.memyearmonth.gz | awk '{print "IA_20190207_302,"$2","$1}' > memdate_out_IA2019.csv 
+nohup zcat IA.20190207.Status200.memyearmonth.gz| awk '{print "IA_20190207_200,"$2","$1}' >> memdate_out_IA2019.csv & 
+nohup zcat IA.20190207.Status404.memyearmonth.gz | awk '{print "IA_20190207_404,"$2","$1}' >> memdate_out_IA2019.csv & 
+
+* PT 2019
+
+nohup zcat PT.20190207.Status302.memyearmonth.gz | awk '{print "PT_20190207_302,"$2","$1}' > memdate_out_PT2019.csv 
+nohup zcat PT.20190207.Status200.memyearmonth.gz| awk '{print "PT_20190207_200,"$2","$1}' >> memdate_out_PT2019.csv & 
+nohup zcat PT.20190207.Status404.memyearmonth.gz | awk '{print "PT_20190207_404,"$2","$1}' >> memdate_out_PT2019.csv & 
+
+=========
+
+scp
+
+scp -r cs_hjaya002@wsdl-docker-private.research.cs.odu.edu:/data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/status_code/memdate_out_IA2012.csv . 
+scp -r cs_hjaya002@wsdl-docker-private.research.cs.odu.edu:/data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/status_code/memdate_out_IA2019.csv . 
+scp -r cs_hjaya002@wsdl-docker-private.research.cs.odu.edu:/data/LogAnalysis/access_pattern/datasets/fullday_sample/temporal_analysis/status_code/memdate_out_PT2019.csv . 
+
+
+scp -r cs_hjaya002@linux.cs.odu.edu:/home/cs_hjaya002/memdate_out_IA2012.csv /home/marsh/Documents/Research/AccessPattern/temporal_analysis/fullday/status_code
+scp -r cs_hjaya002@linux.cs.odu.edu:/home/cs_hjaya002/memdate_out_IA2019.csv /home/marsh/Documents/Research/AccessPattern/temporal_analysis/fullday/status_code
+scp -r cs_hjaya002@linux.cs.odu.edu:/home/cs_hjaya002/memdate_out_PT2019.csv /home/marsh/Documents/Research/AccessPattern/temporal_analysis/fullday/status_code
+
+
+==========
+$ awk -F"," '{while ($3-- > 0) print $1","$2}' memdate_out_IA2019_clean1.csv > memdate_out_IA2019_clean.csv
+$ awk -F"," '{while ($3-- > 0) print $1","$2}' memdate_out_PT2019_clean1.csv > memdate_out_PT2019_clean.csv 
+$ awk -F"," '{while ($3-- > 0) print $1","$2}' memdate_out_IA2012_clean1.csv > memdate_out_IA2012_clean.csv
+
+
+=========================================
+Pinpoint issue
+
+cs_hjaya002@wsdl-docker-private:/data/IALogs/wayback/20190207$ zcat 20190207-wwwb-front1-access.log.gz |  wc -l 
+1024
+
+cs_hjaya002@wsdl-docker-private:/data/IALogs/wayback/20190207$ zcat 20190207-wwwb-front2-access.log.gz | grep "0.175.34.200" | wc -l 
+0
+cs_hjaya002@wsdl-docker-private:/data/IALogs/wayback/20190207$ zcat 20190207-wwwb-front4-access.log.gz | grep "0.175.34.200" | wc -l 
+4
+cs_hjaya002@wsdl-docker-private:/data/IALogs/wayback/20190207$ zcat 20190207-wwwb-front3-access.log.gz | grep "0.175.34.200" | wc -l 
+0
+
+cs_hjaya002@wsdl-docker-private:/data/IALogs/wayback/20190207$ zcat 20190207-wwwb-front1-access.log.gz |  wc -l 
+1024
+cs_hjaya002@wsdl-docker-private:/data/IALogs/wayback/20190207$ zcat 20190207-wwwb-front2-access.log.gz |  wc -l 
+3704606
+cs_hjaya002@wsdl-docker-private:/data/IALogs/wayback/20190207$ zcat 20190207-wwwb-front3-access.log.gz |  wc -l 
+72447
+cs_hjaya002@wsdl-docker-private:/data/IALogs/wayback/20190207$ zcat 20190207-wwwb-front4-access.log.gz |  wc -l 
+304416843
+
+Total = 308194920 ---> matches the combined total
+
+$ zcat /data/LogAnalysis/access_pattern/datasets/fullday_sample/20190207-wwwb-front1234-access.log.gz | grep ^"0.175.34.200" | wc -l
+4
+
+
+
+

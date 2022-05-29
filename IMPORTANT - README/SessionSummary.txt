@@ -1,0 +1,78 @@
+####Separate into bots and humans
+
+python3 /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/get_summary.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/pt.logfile.2019-07-07.sorted.sess.metadata_v1 /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.humansess /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/pt.logfile.2019-07-07.sorted.v2.tag.cleaneds2.out1.robosess /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/pt.logfile.2019-07-07.sorted.sess.metadata_v1_human /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/pt.logfile.2019-07-07.sorted.sess.metadata_v1_bot
+
+python3 /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/get_summary.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/20120202.wayback.access.log.sorted.sess.metadata_v1 /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/20120202.wayback.access.log.sorted.v2.tag.cleaneds2.out1.humansess /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/20120202.wayback.access.log.sorted.v2.tag.cleaneds2.out1.robosess /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20120202.wayback.access.log.sorted.sess.metadata_v1_human /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20120202.wayback.access.log.sorted.sess.metadata_v1_bot
+
+python3 /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/get_summary.py /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/20190207-wwwb-front1234-access.log.sorted.sess.metadata_v1 /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/20190207-wwwb-front1234-access.log.sorted.v2.tag.cleaneds2.out1.humansess /data/LogAnalysis/access_pattern/datasets/fullday_sample/cleaned_data_s2/humanVSbots/20190207-wwwb-front1234-access.log.sorted.v2.tag.cleaneds2.out1.robosess /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20190207-wwwb-front1234-access.log.sorted.sess.metadata_v1_human /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20190207-wwwb-front1234-access.log.sorted.sess.metadata_v1_bot
+
+####Session length
+
+awk '{ total += $3 } END { print "PT2019 - B",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/pt.logfile.2019-07-07.sorted.sess.metadata_v1_bot > session_length.mean 
+awk '{ total += $3 } END { print "PT2019 - H",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/pt.logfile.2019-07-07.sorted.sess.metadata_v1_human >> session_length.mean
+awk '{ total += $3 } END { print "IA2019 - B",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20190207-wwwb-front1234-access.log.sorted.sess.metadata_v1_bot >> session_length.mean
+awk '{ total += $3 } END { print "IA2019 - H",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20190207-wwwb-front1234-access.log.sorted.sess.metadata_v1_human >> session_length.mean
+awk '{ total += $3 } END { print "IA2012 - B",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20120202.wayback.access.log.sorted.sess.metadata_v1_bot >> session_length.mean
+awk '{ total += $3 } END { print "IA2012 - H",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20120202.wayback.access.log.sorted.sess.metadata_v1_human >> session_length.mean
+
+####Session duration
+
+awk '{ total += $7 } END { print "PT2019 - B",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/pt.logfile.2019-07-07.sorted.sess.metadata_v1_bot > session_duration.mean 
+awk '{ total += $7 } END { print "PT2019 - H",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/pt.logfile.2019-07-07.sorted.sess.metadata_v1_human >> session_duration.mean
+awk '{ total += $7 } END { print "IA2019 - B",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20190207-wwwb-front1234-access.log.sorted.sess.metadata_v1_bot >> session_duration.mean
+awk '{ total += $7 } END { print "IA2019 - H",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20190207-wwwb-front1234-access.log.sorted.sess.metadata_v1_human >> session_duration.mean
+awk '{ total += $7 } END { print "IA2012 - B",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20120202.wayback.access.log.sorted.sess.metadata_v1_bot >> session_duration.mean
+awk '{ total += $7 } END { print "IA2012 - H",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20120202.wayback.access.log.sorted.sess.metadata_v1_human >> session_duration.mean
+
+####BS
+
+awk '{ total += $6 } END { print "PT2019 - B",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/pt.logfile.2019-07-07.sorted.sess.metadata_v1_bot > browsing_speed.mean 
+awk '{ total += $6 } END { print "PT2019 - H",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/pt.logfile.2019-07-07.sorted.sess.metadata_v1_human >> browsing_speed.mean
+awk '{ total += $6 } END { print "IA2019 - B",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20190207-wwwb-front1234-access.log.sorted.sess.metadata_v1_bot >> browsing_speed.mean
+awk '{ total += $6 } END { print "IA2019 - H",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20190207-wwwb-front1234-access.log.sorted.sess.metadata_v1_human >> browsing_speed.mean
+awk '{ total += $6 } END { print "IA2012 - B",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20120202.wayback.access.log.sorted.sess.metadata_v1_bot >> browsing_speed.mean
+awk '{ total += $6 } END { print "IA2012 - H",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20120202.wayback.access.log.sorted.sess.metadata_v1_human >> browsing_speed.mean
+
+####IH
+
+
+awk '{ total += $5 } END { print "PT2019 - B",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/pt.logfile.2019-07-07.sorted.sess.metadata_v1_bot > IH_ratio.mean 
+awk '{ total += $5 } END { print "PT2019 - H",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/pt.logfile.2019-07-07.sorted.sess.metadata_v1_human >> IH_ratio.mean
+awk '{ total += $5 } END { print "IA2019 - B",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20190207-wwwb-front1234-access.log.sorted.sess.metadata_v1_bot >> IH_ratio.mean
+awk '{ total += $5 } END { print "IA2019 - H",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20190207-wwwb-front1234-access.log.sorted.sess.metadata_v1_human >> IH_ratio.mean
+awk '{ total += $5 } END { print "IA2012 - B",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20120202.wayback.access.log.sorted.sess.metadata_v1_bot >> IH_ratio.mean
+awk '{ total += $5 } END { print "IA2012 - H",total/NR }' /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20120202.wayback.access.log.sorted.sess.metadata_v1_human >> IH_ratio.mean
+
+#### Inter request time
+sort -k8n,8 /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/pt.logfile.2019-07-07.sorted.sess.metadata_v1_bot | awk 'NR>1{a[++i]=$8}END{if(i%2==1)print "PT2019 - B",a[(i+1)/2];else print "PT2019 - B",(a[i/2]+a[i/2+1])/2}' > inter_rt.median
+
+sort -k8n,8 /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/pt.logfile.2019-07-07.sorted.sess.metadata_v1_human | awk 'NR>1{a[++i]=$8}END{if(i%2==1)print "PT2019 - H",a[(i+1)/2];else print "PT2019 - H",(a[i/2]+a[i/2+1])/2}' >> inter_rt.median
+
+sort -k8n,8 /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20190207-wwwb-front1234-access.log.sorted.sess.metadata_v1_bot | awk 'NR>1{a[++i]=$8}END{if(i%2==1)print "IA2019 - B",a[(i+1)/2];else print "IA2019 - B",(a[i/2]+a[i/2+1])/2}' >> inter_rt.median
+
+sort -k8n,8 /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20190207-wwwb-front1234-access.log.sorted.sess.metadata_v1_human | awk 'NR>1{a[++i]=$8}END{if(i%2==1)print "IA2019 - H",a[(i+1)/2];else print "IA2019 - H",(a[i/2]+a[i/2+1])/2}' >> inter_rt.median
+
+sort -k8n,8 /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20120202.wayback.access.log.sorted.sess.metadata_v1_bot | awk 'NR>1{a[++i]=$8}END{if(i%2==1)print "IA2012 - B",a[(i+1)/2];else print "IA2012 - B",(a[i/2]+a[i/2+1])/2}' >> inter_rt.median
+
+sort -k8n,8 /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20120202.wayback.access.log.sorted.sess.metadata_v1_human | awk 'NR>1{a[++i]=$8}END{if(i%2==1)print "IA2012 - H",a[(i+1)/2];else print "IA2012 - H",(a[i/2]+a[i/2+1])/2}' >> inter_rt.median
+
+
+#### Standard deviation of inter RT
+sort -k9n,9 /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/pt.logfile.2019-07-07.sorted.sess.metadata_v1_bot | awk 'NR>1{a[++i]=$9}END{if(i%2==1)print "PT2019 - B",a[(i+1)/2];else print "PT2019 - B",(a[i/2]+a[i/2+1])/2}' > std_rt.median
+
+sort -k9n,9 /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/pt.logfile.2019-07-07.sorted.sess.metadata_v1_human | awk 'NR>1{a[++i]=$9}END{if(i%2==1)print "PT2019 - H",a[(i+1)/2];else print "PT2019 - H",(a[i/2]+a[i/2+1])/2}' >> std_rt.median
+
+sort -k9n,9 /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20190207-wwwb-front1234-access.log.sorted.sess.metadata_v1_bot | awk 'NR>1{a[++i]=$9}END{if(i%2==1)print "IA2019 - B",a[(i+1)/2];else print "IA2019 - B",(a[i/2]+a[i/2+1])/2}' >> std_rt.median
+
+sort -k9n,9 /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20190207-wwwb-front1234-access.log.sorted.sess.metadata_v1_human | awk 'NR>1{a[++i]=$9}END{if(i%2==1)print "IA2019 - H",a[(i+1)/2];else print "IA2019 - H",(a[i/2]+a[i/2+1])/2}' >> std_rt.median
+
+sort -k9n,9 /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20120202.wayback.access.log.sorted.sess.metadata_v1_bot | awk 'NR>1{a[++i]=$9}END{if(i%2==1)print "IA2012 - B",a[(i+1)/2];else print "IA2012 - B",(a[i/2]+a[i/2+1])/2}' >> std_rt.median
+
+sort -k9n,9 /data/LogAnalysis/access_pattern/datasets/fullday_sample/session_data/session_summary/20120202.wayback.access.log.sorted.sess.metadata_v1_human | awk 'NR>1{a[++i]=$9}END{if(i%2==1)print "IA2012 - H",a[(i+1)/2];else print "IA2012 - H",(a[i/2]+a[i/2+1])/2}' >> std_rt.median
+
+
+
+
+
+
+
